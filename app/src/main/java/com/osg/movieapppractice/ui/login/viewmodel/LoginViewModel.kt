@@ -11,7 +11,6 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 class LoginViewModel @ViewModelInject constructor() : ViewModel() {
     val userIntent = Channel<LoginIntent>(Channel.UNLIMITED)

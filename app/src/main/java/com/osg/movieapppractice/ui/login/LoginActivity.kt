@@ -28,7 +28,6 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.ui.tooling.preview.Preview
 import com.osg.movieapppractice.ui.compose.MyTextField
@@ -50,6 +49,9 @@ class LoginActivity : AppCompatActivity() {
                 is LoginState.Idle -> {}
                 is LoginState.Login -> {
                     Toast.makeText(this, "dkdkdkdkdkd", Toast.LENGTH_SHORT).show()
+                }
+                is LoginState.Error -> {
+                    Toast.makeText(this, it.error, Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -116,6 +118,5 @@ fun LoginScreen(
 @Composable
 fun LoginPrev() {
     Surface(color = Color.White) {
-//        LoginScreen(modifier = Modifier.fillMaxSize(), changeActicity = changeActicity())
     }
 }

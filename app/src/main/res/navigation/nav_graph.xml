@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/loginActivity">
-
+    app:startDestination="@id/movieMainActivity2">
     <activity
-        android:id="@+id/loginActivity"
-        android:name="com.osg.movieapppractice.ui.login.LoginActivity"
-        android:label="activity_login"
-        tools:layout="@layout/activity_login" />
+        android:id="@+id/movieMainActivity2"
+        android:name="com.osg.movieapppractice.ui.moviemain.MovieMainActivity"
+        android:label="activity_movie_main"
+        tools:layout="@layout/activity_movie_main" />
 </navigation>
