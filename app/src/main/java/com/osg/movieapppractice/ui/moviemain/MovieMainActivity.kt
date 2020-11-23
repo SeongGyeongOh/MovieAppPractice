@@ -1,4 +1,4 @@
-package com.osg.movieapppractice.tab
+package com.osg.movieapppractice.ui.moviemain
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,22 +7,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.setContent
 import androidx.ui.tooling.preview.Preview
 
-class TabsActivity : AppCompatActivity() {
+class MovieMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Tabs()
+            MovieMain()
         }
     }
 }
 
 @Composable
-fun Tabs() {
-    Text(text = "tabs Activity")
+fun MovieMain() {
+    Text(text = "Movie Main Page")
 }
 
 @Preview
 @Composable
-fun TabsPrev() {
-    Tabs()
+fun MovieMainPrev() {
+    MovieMain()
 }

@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -57,21 +59,14 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //compose
-    implementation 'androidx.compose.ui:ui:1.0.0-alpha05'
-    // Tooling support (Previews, etc.)
-    implementation 'androidx.ui:ui-tooling:1.0.0-alpha05'
-    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
-    implementation 'androidx.compose.foundation:foundation:1.0.0-alpha05'
-    // Material Design
-    implementation 'androidx.compose.material:material:1.0.0-alpha05'
-    // Material design icons
-    implementation 'androidx.compose.material:material-icons-core:1.0.0-alpha05'
-    implementation 'androidx.compose.material:material-icons-extended:1.0.0-alpha05'
-    // Integration with observables
-    implementation 'androidx.compose.runtime:runtime-livedata:1.0.0-alpha05'
-    implementation 'androidx.compose.runtime:runtime-rxjava2:1.0.0-alpha05'
-    // UI Tests
-    androidTestImplementation 'androidx.ui:ui-test:1.0.0-alpha05'
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.ui:ui-tooling:$compose_version"
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+
+//    androidTestImplementation 'androidx.ui:ui-test:1.0.0-alpha05'
 
     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -99,5 +94,13 @@ dependencies {
     //navigate
     implementation 'android.arch.navigation:navigation-fragment:1.0.0'
     implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0'
+
+    def nav_compose_version = "1.0.0-alpha01"
+    implementation "androidx.navigation:navigation-compose:$nav_compose_version"
+
+    // Hilt dependencies
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01'
 
 }

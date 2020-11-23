@@ -1,4 +1,4 @@
-package com.osg.movieapppractice.login
+package com.osg.movieapppractice.ui.tab
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,22 +7,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.setContent
 import androidx.ui.tooling.preview.Preview
 
-class LoginActivity : AppCompatActivity() {
+class TabsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Login()
+            Tabs()
         }
     }
 }
 
 @Composable
-fun Login() {
-    Text(text = "Login Activity")
+fun Tabs() {
+    Text(text = "tabs Activity")
 }
 
 @Preview
 @Composable
-fun LoginPrev() {
-    Login()
+fun TabsPrev() {
+    Tabs()
 }

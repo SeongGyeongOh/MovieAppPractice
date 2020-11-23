@@ -1,4 +1,4 @@
-package com.osg.movieapppractice.moviemain
+package com.osg.movieapppractice.ui.moviedetail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,22 +7,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.setContent
 import androidx.ui.tooling.preview.Preview
 
-class MovieMainActivity : AppCompatActivity() {
+class MovieDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MovieMain()
+            MovieDetail()
         }
     }
 }
 
 @Composable
-fun MovieMain() {
-    Text(text = "Movie Main Page")
+fun MovieDetail() {
+    Text(text = "movie Detail Activity")
 }
 
 @Preview
 @Composable
-fun MovieMainPrev() {
-    MovieMain()
+fun MovieDetailPrev() {
+    MovieDetail()
 }
