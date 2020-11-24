@@ -10,9 +10,11 @@ interface ApiService {
     suspend fun getMovie(): String
 }
 
+
 val retrofit: Retrofit = Retrofit.Builder()
     .baseUrl("https://yts.lt")
     .addConverterFactory(ScalarsConverterFactory.create())
     .build()
 
-val apiService: ApiService = retrofit.create(ApiService::class.java)
+
+//val apiService: ApiService = retrofit.create(ApiService::class.java)
