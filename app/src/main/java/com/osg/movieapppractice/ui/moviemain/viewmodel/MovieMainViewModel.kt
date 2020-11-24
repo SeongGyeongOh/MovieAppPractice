@@ -2,7 +2,11 @@ package com.osg.movieapppractice.ui.moviemain.viewmodel
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.osg.movieapppractice.data.repository.MovieMainRepository
 import com.osg.movieapppractice.ui.moviemain.intent.MovieMainIntent
 import com.osg.movieapppractice.ui.moviemain.state.MovieMainState
@@ -25,22 +29,22 @@ class MovieMainViewModel@ViewModelInject constructor(
         handleIntent()
     }
 
-    private fun handleIntent(){
+    private fun handleIntent() {
         _state.value = MovieMainState.Idle
         viewModelScope.launch {
             userIntent.consumeAsFlow().collect {
-                when(it){
+                when (it) {
                     is MovieMainIntent.MovieList -> showMoviePage()
                 }
             }
         }
     }
 
-    private fun showMoviePage(){
+    private fun showMoviePage() {
         viewModelScope.launch {
-            _state.value = try{
+            _state.value = try {
                 MovieMainState.FetchMovie(repository.getMovie())
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 MovieMainState.Error(e.stackTraceToString())
             }
         }

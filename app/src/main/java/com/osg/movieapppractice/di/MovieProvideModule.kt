@@ -1,7 +1,5 @@
 package com.osg.movieapppractice.di
 
-import com.osg.movieapppractice.data.api.ApiHelper
-import com.osg.movieapppractice.data.api.ApiHelperImpl
 import com.osg.movieapppractice.data.api.ApiService
 import dagger.Module
 import dagger.Provides
@@ -13,14 +11,14 @@ import javax.inject.Singleton
 
 @InstallIn(ApplicationComponent::class)
 @Module
-object MovieProvideModule{
+object MovieProvideModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit() : Retrofit = Retrofit.Builder()
-            .baseUrl("https://yts.lt")
-            .addConverterFactory(ScalarsConverterFactory.create())
-            .build()
+    fun provideRetrofit(): Retrofit = Retrofit.Builder()
+        .baseUrl("https://yts.lt")
+        .addConverterFactory(ScalarsConverterFactory.create())
+        .build()
 
     @Provides
     @Singleton

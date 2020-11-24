@@ -1,6 +1,5 @@
 package com.osg.movieapppractice.data.api
 
-import com.osg.movieapppractice.data.model.MovieComponent
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
@@ -10,11 +9,9 @@ interface ApiService {
     suspend fun getMovie(): String
 }
 
-
 val retrofit: Retrofit = Retrofit.Builder()
     .baseUrl("https://yts.lt")
     .addConverterFactory(ScalarsConverterFactory.create())
     .build()
 
-
-//val apiService: ApiService = retrofit.create(ApiService::class.java)
+// val apiService: ApiService = retrofit.create(ApiService::class.java)
