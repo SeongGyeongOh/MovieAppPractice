@@ -27,6 +27,7 @@ class LoginViewModel @ViewModelInject constructor() : ViewModel() {
             userIntent.consumeAsFlow().collect {
                 when (it) {
                     is LoginIntent.Login -> enterMainMovieActivity()
+//                    is LoginIntent.PasswordScreen -> movePasswordScreen()
                 }
             }
         }
@@ -41,4 +42,12 @@ class LoginViewModel @ViewModelInject constructor() : ViewModel() {
             }
         }
     }
+
+//    private fun movePasswordScreen(){
+//        _state.value  = try{
+//            LoginState.
+//        }catch (e: Exception){
+//            LoginState.Error(e.stackTraceToString())
+//        }
+//    }
 }
